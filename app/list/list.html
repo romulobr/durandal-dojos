@@ -1,0 +1,23 @@
+<div>
+<input placeholder="What to do" id="action" type="text" style="font-size:2em" data-bind="value: newTask, valueUpdate: 'afterkeydown'"/>
+<button data-bind="click: addTask, enable: newTask"> Add </button>
+
+<div>
+	<label>
+		<input type="radio" name="filter" value="noFilter" data-bind="checked: filterBy" /> All
+	</label>
+	<label>
+		<input type="radio" name="filter" value="pending" data-bind="checked: filterBy"/> Pending
+	</label>
+	<label>
+		<input type="radio" name="filter" value="done" data-bind="checked: filterBy"/> Done
+	</label>
+</div>
+	
+<ul data-bind="foreach: list">
+	<li>
+		<input type="checkbox" data-bind="checked: done" />
+		<span data-bind="text: task, css: {taskDone: done}"></span>
+	</li>
+</ul>
+</div>
